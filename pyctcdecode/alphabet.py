@@ -110,14 +110,14 @@ def _normalize_bpe_alphabet(labels: List[str]) -> List[str]:
     return normalized_labels
 
 
-# def _verify_alphabet(labels: List[str], is_bpe: bool) -> None:
-#     """Verify basic alphabet labels."""
-#     # check if duplicates exist
-#     if len(labels) != len(set(labels)):
-#         raise ValueError("Alphabet contains duplicate entries, this is not allowed.")
-#     # check if space character is absent in bpe alphabet
-#     if is_bpe and any([" " in s for s in labels]):
-#         raise ValueError("Space token ' ' found in vocabulary even though it looks like BPE.")
+def _verify_alphabet(labels: List[str], is_bpe: bool) -> None:
+    """Verify basic alphabet labels."""
+    # check if duplicates exist
+    if len(labels) != len(set(labels)):
+        raise ValueError("Alphabet contains duplicate entries, this is not allowed.")
+    # check if space character is absent in bpe alphabet
+    if is_bpe and any([" " in s for s in labels]):
+        raise ValueError("Space token ' ' found in vocabulary even though it looks like BPE.")
 
 
 class Alphabet:
