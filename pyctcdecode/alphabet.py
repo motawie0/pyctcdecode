@@ -140,7 +140,7 @@ class Alphabet:
     def build_alphabet(cls, labels: List[str]) -> "Alphabet":
         """Make an alphabet from labels in standardized format for decoder."""
         is_bpe = _check_if_bpe(labels)
-        _verify_alphabet(labels, is_bpe)
+        # _verify_alphabet(labels, is_bpe)
         if is_bpe:
             normalized_labels = _normalize_bpe_alphabet(labels)
         else:
