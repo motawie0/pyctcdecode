@@ -338,6 +338,9 @@ class BeamSearchDecoderCTC:
                 % len(logits.shape)
             )
         if logits.shape[-1] != len(self._idx2vocab):
+            print("motawie:")
+            print("logits:", logits)
+            print(self._idx2vocab)
             raise ValueError(
                 "Input logits shape is %s, but vocabulary is size %s. "
                 "Need logits of shape: (time, vocabulary)" % (logits.shape, len(self._idx2vocab))
